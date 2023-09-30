@@ -26,7 +26,6 @@ export class AuthService {
             throw error
             
         }
-
     }
     async login({email, password}) {
         try {
@@ -50,7 +49,6 @@ export class AuthService {
     async logout() {
         try {
             return await this.account.deleteSessions()
-            
             
         } catch (error) {
             console.log("This is the error logout",error)

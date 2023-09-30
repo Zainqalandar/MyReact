@@ -2,7 +2,7 @@ import { createSlice, nanoid } from "@reduxjs/toolkit";
 
 
 const initialState = {
-    status: true,
+    status: false,
     userData: null
 }
 const authSlice = createSlice({

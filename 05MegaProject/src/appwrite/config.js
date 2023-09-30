@@ -27,7 +27,6 @@ export class Sevicse {
                     status,
                     userId
                 }
-
             )
 
         } catch (error) {
@@ -36,6 +35,7 @@ export class Sevicse {
         }
 
     }
+    
     async updatePost(slug, { title, content, featuredImage, status }) {
         try {
             return await this.databases.updateDocument(

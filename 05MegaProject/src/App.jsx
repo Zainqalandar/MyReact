@@ -1,13 +1,14 @@
 import { useDispatch } from 'react-redux'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Header, Footer } from './components'
 import authservice from './appwrite/auth.js'
 import { login , logout } from './Store/authSlice'
 
 
 function App() {
-  const [loading, setLoading] = useState(true)  
+  const [loading, setLoading] = useState(true)
   const dispatch = useDispatch()
+  const inputref = useRef()
 
   useEffect(() => {
     authservice.getCurrentUser()
@@ -20,7 +21,12 @@ function App() {
     })
     .finally(()=> setLoading(false))
     
+    
   }, [])
+  useEffect(() => {
+    inputref.current?.focus();
+  }, [])
+  
 
   return !loading ? (
     <div className="App">
