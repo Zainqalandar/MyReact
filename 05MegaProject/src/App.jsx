@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Header, Footer } from './components'
 import authservice from './appwrite/auth.js'
 import { login , logout } from './Store/authSlice'
+import { Outlet } from 'react-router-dom'
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
   return !loading ? (
     <div className="App">
       <Header />
+      Todos: <Outlet />
       <Footer />
     </div>
   ) : null;
