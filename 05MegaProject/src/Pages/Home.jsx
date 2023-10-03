@@ -6,11 +6,13 @@ function Home() {
     const [posts, setPosts] = useState([])
     useEffect(() => {
         appwriteService.getAllPosts().then((posts) => {
+            console.log(posts)
             if (posts) {
                 setPosts(posts.documents)
             }
         })
     }, [])
+    console.log(posts)
 
     if (posts.length === 0) {
         return (
