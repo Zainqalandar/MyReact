@@ -35,7 +35,7 @@ export class Sevicse {
         }
 
     }
-    
+
     async updatePost(slug, { title, content, featuredImage, status }) {
         try {
             return await this.databases.updateDocument(
@@ -52,9 +52,6 @@ export class Sevicse {
 
         } catch (error) {
             console.log(error)
-
-
-
         }
 
     }
@@ -82,6 +79,7 @@ export class Sevicse {
                 confi.appwritecollectionId,
                 slug
             )
+
             return true;
 
         } catch (error) {

@@ -8,6 +8,8 @@ function Home() {
         appwriteService.getAllPosts().then((posts) => {
             console.log(posts)
             if (posts) {
+                console.log(posts)
+
                 setPosts(posts.documents)
             }
         })
